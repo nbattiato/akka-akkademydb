@@ -1,0 +1,2 @@
+# akka-akkademydb
+Learning akka
