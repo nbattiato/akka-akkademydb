@@ -20,14 +20,10 @@ public class AkkademyDb extends AbstractActor {
 
     private AkkademyDb() {
         receive(ReceiveBuilder.match(SetRequest.class, message -> {
-                    log.info("Received set request - key: {} value: {}",
-                            message.getKey(), message.getValue());
-//            System.out.println("key = " + message.getKey());
-//            System.out.println("value = " + message.getValue());
+                    log.info("Received set request - key: {} value: {}", message.getKey(), message.getValue());
                     map.put(message.getKey(), message.getValue());
                 }).matchAny(o -> log.info("Received unknown message {}", o)).build()
         );
-
 
     }
 
